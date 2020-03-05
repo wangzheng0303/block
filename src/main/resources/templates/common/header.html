@@ -1,0 +1,33 @@
+<div class="fly-header layui-bg-black" id="h">
+    <div class="fly-logo">
+        <img src="/static/img/index/logo.png" style="width: 160px;height: 60px" ,alt="个人博客"/>
+    </div>
+
+    <!--未登录状态-->
+    <ul th:if="${session.currentUser == null}" class="layui-nav layui-layout-right">
+        <li class="layui-nav-item">
+            <a class="layui-icon layui-icon-friends" href="javascript:login()"></a>
+        </li>
+        <li class="layui-nav-item">
+            <a href="javascript:login()">登录</a>
+        </li>
+        <li class="layui-nav-item">
+            <a href="javascript:register()">注册</a>
+        </li>
+    </ul>
+
+    <ul th:if="${session.currentUser != null}" class="layui-nav layui-layout-right">
+        <li class="layui-nav-item">
+            <a href="javascript:;">解决方案</a>
+            <dl class="layui-nav-child">
+                <dd><a href="javascript:;">我的主页</a></dd>
+                <dd><a href="javascript:;">用户中心</a></dd>
+                <dd><a href="javascript:;">我的消息</a></dd>
+                <dd><a href="javascript:userLogout()">退出</a></dd>
+            </dl>
+        </li>
+    </ul>
+
+</div>
+
+
